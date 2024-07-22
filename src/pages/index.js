@@ -42,7 +42,7 @@
           </Layout>
           <Hireme />
           <div className='absolute right-8 bottom-1 inline-block w-12'>
-            <Image src={lightBulb} alt='Techates' className='w-full h-auto'/>
+            <Image src={lightBulb} alt='Techates' className='w-auto h-full'/>
           </div>
         </main>
       </>
