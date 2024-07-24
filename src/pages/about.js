@@ -2,16 +2,17 @@ import AnimatedText from '@/components/AnimatedText';
 import Layout from '@/components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import profilePic from '../../public/images/profile/Designer.jpeg';
-import { useMotionValue, useisInView, useSpring } from 'framer-motion';
+import { useInView, useMotionValue, useSpring } from 'framer-motion';
+
 
 const AnimatedNumbers = ({value}) => {
   const ref = useRef(null);
 
   const motionValue = useMotionValue(0);
-  const useSpring = (motionValue, { duration: 3000 });
-  const isInView = useisInView({ref});
+  const springValue = useSpring(motionValue, { duration: 3000 });
+  const isInView = useInView(ref,{triggerOnce: true});
 
   useEffect(() => {
     if(isInView) {
@@ -21,7 +22,10 @@ const AnimatedNumbers = ({value}) => {
 
   useEffect (() => {
         springValue.on("change", (latest) => {
-          console.log(latest)
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:885220189.
+          if(ref.current && latest.toFixed(0) <= value) {
+            ref.current.textContent = latest.toFixed(0);
+          }
         })
   }, [springValue, value])
 
@@ -74,7 +78,7 @@ But a beautiful website is just the beginning. Our talented photographers and vi
         </div>
         <div className='flex flex-col items-end justify-center'>
           <span className='inline-block text-6xl font-bold'>
-              90+
+          <AnimatedNumbers value={90} />+
           </span>
           <h2 className='text-xl font-medium capitalize text-dark/75'>
             Projects Completed
@@ -82,7 +86,7 @@ But a beautiful website is just the beginning. Our talented photographers and vi
         </div>
         <div className='flex flex-col items-end justify-center'>
           <span className='inline-block text-6xl font-bold'>
-              2+
+          <AnimatedNumbers value={2} />+
           </span>
           <h2 className='text-xl font-medium capitalize text-dark/75'>
             Years of Experience
