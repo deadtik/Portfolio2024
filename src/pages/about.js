@@ -5,6 +5,7 @@ import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 import profilePic from '../../public/images/profile/Designer.jpeg';
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
+import Skills from '@/components/Skills';
 
 
 const AnimatedNumbers = ({value}) => {
@@ -93,6 +94,7 @@ But a beautiful website is just the beginning. Our talented photographers and vi
         </div>
           </div>
         </div>
+        <Skills />
      </Layout> 
     </main>
     </>
