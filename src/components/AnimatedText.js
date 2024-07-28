@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 
 const quote = {
-  inital: {
+  initial: {
     opacity:1,
   },
   animate:{
@@ -14,7 +14,7 @@ const quote = {
   }
 }
 const  SingleWord= {
-  inital: {
+  initial: {
     opacity:0,
     y:50,
   },
