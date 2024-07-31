@@ -6,6 +6,7 @@ import React, { useEffect, useRef } from 'react';
 import profilePic from '../../public/images/profile/Designer.jpeg';
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
 import Skills from '@/components/Skills';
+import Experience from '@/components/Experience';
 
 
 const AnimatedNumbers = ({value}) => {
@@ -95,6 +96,7 @@ But a beautiful website is just the beginning. Our talented photographers and vi
           </div>
         </div>
         <Skills />
+        <Experience />
      </Layout> 
     </main>
     </>
