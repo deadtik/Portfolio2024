@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Deatils = ({position, company, companyLink, time, address, work}) => {
+const Details = ({position, company, companyLink, time, address, work}) => {
     
 }
 
