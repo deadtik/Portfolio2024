@@ -7,7 +7,7 @@ import profilePic from '../../public/images/profile/Designer.jpeg';
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
 import Skills from '@/components/Skills';
 import Experience from '@/components/Experience';
-
+import Education from '@/components/Education';
 
 const AnimatedNumbers = ({value}) => {
   const ref = useRef(null);
@@ -97,6 +97,7 @@ But a beautiful website is just the beginning. Our talented photographers and vi
         </div>
         <Skills />
         <Experience />
+        <Education />
      </Layout> 
     </main>
     </>
