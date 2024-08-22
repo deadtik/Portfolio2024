@@ -5,13 +5,18 @@ import AnimatedText from '@/components/AnimatedText';
 import Link from 'next/link';
 import Image from 'next/image';
 import { GithubIcon } from '@/components/Icons';
-import project1 from '../../public/images/projects/portfolio-cover-image.jpg';
+import project1 from '../../public/images/projects/bbdecors.png';
+import project2 from '../../public/images/projects/Juicy Rasoi.jpg';
+import project3 from '../../public/images/projects/logo-birdy.png'
+
 
 const FeaturedProjects= ({type, title, summary, img, link, github}) => {
   return(
-    <article className='w-full flex items-center justify-between rounded-3xl 
+    <article className='w-full flex items-center justify-between rounded-3xl rounded-br-2xl 
         border border-solid border-dark bg-light shadow-2xl p-12
           relative'>
+            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark
+            rounded-br-3xl'/>
       <Link href={link} target='_blank'
       className='w-1/2 cursor-pointer overflow-hidden rounded-lg'>
       <Image src={img} alt={title} className='w-full h-auto'/>      
@@ -37,12 +42,14 @@ const FeaturedProjects= ({type, title, summary, img, link, github}) => {
   )
 }
 
-const Project = ({type, title, summary, img, link, github}) => {
+const Project = ({type, title, img, link, github}) => {
   return (
 
     <article className='w-full flex items-center justify-center rounded-2xl 
         border border-solid border-dark bg-light shadow-2xl p-6
           relative'>
+            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark
+            rounded-br-3xl'/>
       <Link href={link} target='_blank'
       className='w-full cursor-pointer overflow-hidden rounded-lg'>
       <Image src={img} alt={title} className='w-full h-auto'/>      
@@ -51,7 +58,7 @@ const Project = ({type, title, summary, img, link, github}) => {
          <div className='w-full flex flex-col items-start justify-between pl-6'>
            <span className='text-primary font-medium text-xl'>{type}</span>
               <Link href={link} target='_blank' className='hover:underline underline-offset-2'>
-                <h2 className='my-2 w-full text-left text-4xl font-bold'>{title}</h2>
+                <h2 className='my-2 w-full text-left text-3xl font-bold'>{title}</h2>
               </Link>
           
               <div className='mt-2 flex items-center'>
@@ -78,15 +85,15 @@ return (
       <main className='flex w-full flex-col items-center justify-center mb-16'>
           <Layout className='pt-16'>
               <AnimatedText text='Imagine. Create. Repeat.'
-              className='mb-16 '
+              className='mb-16'
               />
 
-            <div className='grid grid-col-12 gap-24'>
+            <div className='grid grid-col-12 gap-24 gap-y-32'>
             
                 <div className='col-span-12'>
             <FeaturedProjects
             title = 'Beyond Bounds'
-            summary = 'Digital Marketing and Web Development for BEYOND BOUNDS.'
+            summary = 'We provide tailored Digital Marketing and Web Development services for Beyond Bounds, enhancing their online visibility and user experience. My work drives brand growth through effective strategies and seamless website solutions '
              img = {project1}
              link='/'
              github='/'
@@ -96,25 +103,53 @@ return (
       </div> 
       <div className='col-span-6'>
         <Project
-            title = 'Beyond Bounds'
-            summary = 'Digital Marketing and Web Development for BEYOND BOUNDS.'
-             img = {project1}
-             link='/'
-             github='/'
+            title = 'Photography Session for Juicy Rasoi'
+             img = {project2}
+             link='https://drive.google.com/drive/u/0/mobile/folders/1hPD5n1mUsB7TLReS7jbr04-BCMh-gi-_?usp=drive_link'
+             github='https://drive.google.com/drive/u/0/mobile/folders/1hPD5n1mUsB7TLReS7jbr04-BCMh-gi-_?usp=drive_link'
              type='Completed Project'
            />
             </div>
 
             <div className='col-span-6'>
         <Project
+            title = 'WordPress Site For Birdy Furniture.'
+             img = {project3}
+             link='https://birdyfurniture.com/'
+             github='https://birdyfurniture.com/'
+             type='Completed Project'
+           />
+            </div>
+          <div className='col-span-12'>
+           <FeaturedProjects
             title = 'Beyond Bounds'
-            summary = 'Digital Marketing and Web Development for BEYOND BOUNDS.'
+            summary = 'We provide tailored Digital Marketing and Web Development services for Beyond Bounds, enhancing their online visibility and user experience. My work drives brand growth through effective strategies and seamless website solutions '
+             img = {project1}
+             link='/'
+             github='/'
+             type='Ongoing Project'
+                   />
+                   </div>
+                   <div className='col-span-6'>
+        <Project
+            title = 'Beyond Bounds'
              img = {project1}
              link='/'
              github='/'
              type='Completed Project'
            />
-            </div>
+           </div>
+
+           <div className='col-span-6'>
+        <Project
+            title = 'Beyond Bounds'
+             img = {project1}
+             link='/'
+             github='/'
+             type='Completed Project'
+           />
+           </div>
+
             </div>
 
           </Layout>
