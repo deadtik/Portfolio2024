@@ -1,30 +1,11 @@
 import React, { useRef } from 'react';
 import Head from 'next/head';
-import Layout from '@/components/Layout';
-import AnimatedText from '@/components/AnimatedText';
 import { useForm, ValidationError } from '@formspree/react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm('movakzae');
-
   const formRef = useRef(null);
-
-  if (state.succeeded) {
-    return (
-      <main className="flex w-full flex-col items-center justify-center">
-        <Layout className="pt-16">
-          <AnimatedText
-            text="Thanks for reaching out!"
-            className="mb-16"
-          />
-          <p className="text-center text-base font-medium">
-            We'll get back to you as soon as possible.
-          </p>
-        </Layout>
-      </main>
-    );
-  }
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -32,79 +13,84 @@ const Contact = () => {
     formRef.current.reset();
   };
 
+  if (state.succeeded) {
+    return (
+      <main className="flex w-full min-h-screen flex-col items-center justify-center bg-white text-black">
+        <div className="text-center">
+          <title>Thank you!</title>
+          <h1 className="text-4xl font-bold mb-4">Thanks for reaching out!</h1>
+          <p className="text-lg">We'll get back to you as soon as possible.</p>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <>
       <Head>
         <title>Contact Me</title>
         <meta name="description" content="Contact page" />
       </Head>
-      <main className="flex w-full flex-col items-center justify-center">
-        <Layout className="pt-16">
-          <AnimatedText
-            text="Let's Connect!"
-            className="mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
-          />
-          <motion.form
-            ref={formRef}
-            onSubmit={handleFormSubmit}
-            className="flex w-full flex-col gap-8"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-
-            <div className=" w-full flex items-center p-6 justify-start">
-              
-              <input 
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Name"
-                className="input"
-                required
-              />
-              <ValidationError
-                prefix="Name"
-                field="name"
-                errors={state.errors}
-              />
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email"
-                className="input"
-                required
-              />
-              <ValidationError
-                prefix="Email"
-                field="email"
-                errors={state.errors}
-              />
-            </div>
+      <main className="flex w-full min-h-screen flex-col items-center justify-center bg-white text-black">
+        <motion.form
+          ref={formRef}
+          onSubmit={handleFormSubmit}
+          className="w-full max-w-lg p-8 bg-white border border-black rounded-lg shadow-lg"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h1 className="text-3xl font-semibold mb-6 text-center">Contact Us!</h1>
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-sm font-medium mb-1">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your Name"
+              className="w-full p-3 bg-white border border-black text-black placeholder-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+              required
+            />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-sm font-medium mb-1">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your Email"
+              className="w-full p-3 bg-white border border-black text-black placeholder-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+              required
+            />
+            <ValidationError prefix="Email" field="email" errors={state.errors} />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="message" className="block text-sm font-medium mb-1">
+              Message
+            </label>
             <textarea
               name="message"
               id="message"
-              cols="30"
-              rows="10"
-              placeholder="Message"
-              className="textarea"
+              rows="5"
+              placeholder="Your Message"
+              className="w-full p-3 bg-white border border-black text-black placeholder-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
               required
             ></textarea>
-            <ValidationError
-              prefix="Message"
-              field="message"
-              errors={state.errors}
-            />
-            <button
-              type="submit"
-              className="btn"
-              disabled={state.submitting}
-            >
-              Submit
-            </button>
-          </motion.form>
-        </Layout>
+            <ValidationError prefix="Message" field="message" errors={state.errors} />
+          </div>
+          <button
+            type="submit"
+            className="w-full p-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors duration-300 disabled:opacity-50"
+            disabled={state.submitting}
+          >
+            Submit
+          </button>
+        </motion.form>
       </main>
     </>
   );
