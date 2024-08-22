@@ -7,8 +7,10 @@ import Image from 'next/image';
 import { GithubIcon } from '@/components/Icons';
 import project1 from '../../public/images/projects/bbdecors.png';
 import project2 from '../../public/images/projects/Juicy Rasoi.jpg';
-import project3 from '../../public/images/projects/logo-birdy.png'
-
+import project3 from '../../public/images/projects/logo-birdy.png';
+import project4 from '../../public/images/projects/craftastic.png';
+import project5 from '../../public/images/projects/Gsoc.png'
+import project6 from '../../public/images/projects/forage.png'
 
 const FeaturedProjects= ({type, title, summary, img, link, github}) => {
   return(
@@ -122,31 +124,31 @@ return (
             </div>
           <div className='col-span-12'>
            <FeaturedProjects
-            title = 'Beyond Bounds'
-            summary = 'We provide tailored Digital Marketing and Web Development services for Beyond Bounds, enhancing their online visibility and user experience. My work drives brand growth through effective strategies and seamless website solutions '
-             img = {project1}
-             link='/'
+            title = 'Craftastic: Your Favorite Personal Gift Shop.'
+            summary = 'We are developing a very Special Site for one of my FAVOURITE GIFT SHOPS. With Interactive UI and Responsive Design. Project is under development, the github repository is thus private and the link is unavailable for now.'
+             img = {project4}
+             link='https://www.instagram.com/craftastic003/'
              github='/'
              type='Ongoing Project'
                    />
                    </div>
                    <div className='col-span-6'>
         <Project
-            title = 'Beyond Bounds'
-             img = {project1}
-             link='/'
-             github='/'
-             type='Completed Project'
+            title = 'GSOC: LPython Compiler'
+             img = {project5}
+             link='https://summerofcode.withgoogle.com/'
+             github='/https://github.com/lcompilers/lpython'
+             type='Actively Contributing'
            />
            </div>
 
            <div className='col-span-6'>
         <Project
-            title = 'Beyond Bounds'
-             img = {project1}
-             link='/'
-             github='/'
-             type='Completed Project'
+            title = 'Software Engineering Virtual Experience by Forage'
+             img = {project6}
+             link='https://drive.google.com/file/d/1Ts4va4M13DfWlJgwfHvMS49RU5GWSNop/view?usp=sharing'
+             github='https://github.com/deadtik/forage-jpmc-swe-task-3'
+             type='Certification.'
            />
            </div>
 
