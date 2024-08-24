@@ -42,12 +42,12 @@ const about = () => {
         <title>Kartik | About Page</title>
       <meta name='description' content='any description' />
     </Head>
-    <main className='flex w-full flex-col items-center justify-center'>
+    <main className='flex w-full flex-col items-center justify-center dark:text-light'>
      <Layout className='pt-16 pb-16'>
         <AnimatedText text='Dream, plan, execute.' className='mb-16'/>
-        <div className='grid w-full grid-cols-8 gap-16 '>
+        <div className='grid w-full grid-cols-8 gap-16'>
           <div className='col-span-3 flex flex-col items-start justify-start'>
-            <h2 className='mb-4 text-lg font-bold uppercase text-dark/75'>About Me</h2>
+            <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>About Me</h2>
             <p className='font-medium'>
             We are a creative collective passionate about translating your brand's essence into a captivating online experience.
              We understand the power of a well-crafted digital presence, and we're here to be your one-stop shop for crafting it.
@@ -63,8 +63,9 @@ But a beautiful website is just the beginning. Our talented photographers and vi
             </p>
           </div>
           <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark
-          bg-light p-8 flex flex-col justify-between'>
-            <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark'/>
+          bg-light p-8 flex flex-col justify-between dark:bg-dark dark:border-light'>
+            <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark 
+            dark:bg-light '/>
           <Image src={profilePic} alt='Techates' className='w-full h-auto rounded-2xl'/>
           </div>
 
@@ -73,7 +74,7 @@ But a beautiful website is just the beginning. Our talented photographers and vi
           <span className='inline-block text-6xl font-bold'>
               <AnimatedNumbers value={100} />+
           </span>
-          <h2 className='text-xl font-medium capitalize text-dark/75'>
+          <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>
             Satisfied Clients
           </h2>
         </div>
@@ -81,7 +82,7 @@ But a beautiful website is just the beginning. Our talented photographers and vi
           <span className='inline-block text-6xl font-bold'>
           <AnimatedNumbers value={90} />+
           </span>
-          <h2 className='text-xl font-medium capitalize text-dark/75'>
+          <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>
             Projects Completed
           </h2>
         </div>
@@ -89,7 +90,7 @@ But a beautiful website is just the beginning. Our talented photographers and vi
           <span className='inline-block text-6xl font-bold'>
           <AnimatedNumbers value={2} />+
           </span>
-          <h2 className='text-xl font-medium capitalize text-dark/75'>
+          <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75'>
             Years of Experience
           </h2>
         </div>

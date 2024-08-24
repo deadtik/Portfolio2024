@@ -1,8 +1,9 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Logo from './Logo'
-import {TwitterIcon,LinkedInIcon, GithubIcon, PinterestIcon} from './Icons.js'
+import {TwitterIcon,LinkedInIcon, GithubIcon, PinterestIcon, SunIcon, MoonIcon} from './Icons.js'
 import { motion } from 'framer-motion'
+import useThemeSwitcher from './hooks/useThemeSwitcher'
 
 
 
@@ -20,6 +21,7 @@ const CustomLink = ({title, href, className=""}) => {
       group-hover:w-full transition-[width] duration-500
       ease-in-out
       ${router.asPath === href ? 'w-full' : 'w-0'}
+      dark:bg-light
       `}>&nbsp;</span>
 
       </a>
@@ -28,9 +30,13 @@ const CustomLink = ({title, href, className=""}) => {
 
 
 const NavBar = () => {
+
+
+  const [mode, setMode] = useThemeSwitcher();
+
   return (
     <header
-    className='w-full px-32 py-8 font-medium flex items-center justify-between'
+    className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light'
     >
         <nav>
            <CustomLink href='/' title='Home' className='mx-4'/>
@@ -68,6 +74,21 @@ const NavBar = () => {
               >
               <LinkedInIcon />
               </motion.a>
+
+          <button
+          onClick={() => setMode(mode === "light" ? "dark" : "light") }
+
+          className={`ml-4 flex items-center justify-center rounded-full p-1
+          ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}
+          `}
+          >
+          {
+            mode=== "dark" ? 
+            <SunIcon className={"fill-dark"} /> :
+            <MoonIcon className={"fill-dark"} />
+          }
+        </button>
+
         </nav>
         <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
           <Logo />
