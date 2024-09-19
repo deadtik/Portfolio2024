@@ -51,21 +51,21 @@ const Education = () => {
             <ul className='w-full flex flex-col items-start justify-between ml-4'>
                 <Details
                 type= 'Bachelor Of Engineering In Computer Science'
-                time= '2022-2023'
+                time= '2021 - Pursuing'
                 place ='Chhatrapati Shivaji Maharaj Institute Of Technology (CSMIT)'
                 info= 'Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial Intelligence.'
                 />
                 <Details
-                type= 'Bachelor Of Engineering In Computer Science'
-                time= '2022-2023'
-                place ='Chhatrapati Shivaji Maharaj Institute Of Technology (CSMIT)'
-                info= 'Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial Intelligence.'
+                type= 'HSC: Science'
+                time= '2020-2021'
+                place ='V. G. Vaze College of Arts, Science and Commerce'
+                info= 'Learnt a wide range of subjects including Physics, Chemistry, and Mathematics. Along with Calculus and Beginner level CS.'
                 />
                 <Details
-                type= 'Bachelor Of Engineering In Computer Science'
-                time= '2022-2023'
-                place ='Chhatrapati Shivaji Maharaj Institute Of Technology (CSMIT)'
-                info= 'Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial Intelligence.'
+                type= 'SSC: Primary Education'
+                time= '2020-2021'
+                place ='Powai English High School'
+                info= 'Developed foundational skills in reading, writing, and arithmetic, fostering a love for learning and exploration.'
                 />
 
             </ul>
