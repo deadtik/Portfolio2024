@@ -4,6 +4,7 @@ import '@/styles/globals.css'
 import { AnimatePresence } from 'framer-motion'
 import {Montserrat} from "next/font/google"
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 /**
  * Montserrat font configuration.
@@ -23,11 +24,11 @@ export default function App({ Component, pageProps }) {
   return(
    <>
 
-    <head>
+    <Head>
       <div>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" /> </div>
-    </head>
+    </Head>
     <main className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen `}>
       <NavBar />
       <AnimatePresence>
