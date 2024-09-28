@@ -17,7 +17,7 @@ const Logo = () => {
         }}
 
 
-        >TS</MotionLink>
+        >KS</MotionLink>
         </div>
   )
 }

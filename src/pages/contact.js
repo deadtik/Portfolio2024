@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useForm, ValidationError } from '@formspree/react';
 import { motion } from 'framer-motion';
 import Layout from '@/components/Layout';
+import TransitionEffect from '@/components/transitionEffect';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm('movakzae');
@@ -32,6 +33,7 @@ const Contact = () => {
         <title>Contact Me</title>
         <meta name="description" content="Contact page" />
       </Head>
+      <TransitionEffect />
       <Layout >
       <main className="flex w-full min-h-screen flex-col items-center justify-center bg-white text-black dark:bg-dark dark:text-dark">
         <motion.form

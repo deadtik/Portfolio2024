@@ -5,6 +5,8 @@ const Skill = ({name, x, y}) => {
 return (
   <motion.div className='flex items-center justify-center rounded-full font-semibold bg-dark text-light
       py-3 px-6 shadow-dark cursor-pointer absolute dark:text-dark dark:bg-light
+      lg:py-2 lg:px-4 md:text-sm md:py-1.5 md:px-3 xs:bg-transparent xs:dark:bg-transparent
+      xs:text-dark xs:dark:text-light xs:font-bold
       '
       whileHover={{scale: 1.05}}
       whileTap={{scale: 0.95}}
@@ -21,13 +23,16 @@ return (
 const Skills = () => {
   return (
     <>
-    <h2 className='font-bold text-8xl mt-64 w-full text-center'> Skills </h2>
-    <div className='w-full h-screen relative flex items-center justify-center 
-    rounded-full bg-circularLight dark:bg-circularDark
+    <h2 className='font-bold text-8xl mt-64 w-full text-center md:text-6xl md:mt-32 xs:text-4xl sm:text-3xl'> Skills </h2>
+    <div className='w-full h-screen relative flex items-center justify-center lg:h-[80vh] sm:h-[60vh] xs:h-[50vh]
+    rounded-full bg-circularLight dark:bg-circularDark 
+    lg:bg-circularLightLg lg:dark:bg-circularDarkLg
+    md:bg-circularLightMd md:dark:bg-circularDarkMd
+    sm:bg-circularLightSm sm:dark:bg-circularDarkSm
     '>
 
       <motion.div className='flex items-center justify-center rounded-full
-       font-semibold bg-dark text-light
+       font-semibold bg-dark text-light lg:p-6 md:p-4 xs:text-xs xs:p-2
       p-2 shadow-dark cursor-pointer dark:text-dark dark:bg-light
       '
       whileHover={{scale: 1.05}}
@@ -36,7 +41,6 @@ const Skills = () => {
        Core Development
       </motion.div>
 
-      <Skill name='HTML' x='-10vw' y='5vw' />
       <Skill name='CSS' x='-17vw' y='-12vw' />
       <Skill name='JavaScript' x='2vw' y='11vw' />
       <Skill name='ReactJS' x='13vw' y='17vw' />
